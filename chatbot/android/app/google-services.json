@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "538083035767",
+    "project_id": "chatbot-df782",
+    "storage_bucket": "chatbot-df782.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538083035767:android:cece4376774ace956e9472",
+        "android_client_info": {
+          "package_name": "com.chatbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "538083035767-14hq45prdo2350mdibb4b2av6kr4u10k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtCMrBL87zA8hHR19fgI1lSBn4cvNUq8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "538083035767-14hq45prdo2350mdibb4b2av6kr4u10k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
