@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect, Component } from 'react'
 import { Bubble, GiftedChat, SystemMessage, Time } from 'react-native-gifted-chat'
 import EvilIcons from 'react-native-vector-icons/EvilIcons'
-import { View, Text, FlatList, ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, ActivityIndicator, Image } from 'react-native'
 import { Dialogflow_V2 } from 'react-native-dialogflow'
 import { dialogflowConfig } from './env'
 
@@ -224,6 +224,10 @@ export default class ChatScreen_test extends React.Component {
   render() {
     return (
       <View style={{ backgroundColor: 'white', flex: 1 }}>
+        <View style={{ backgroundColor: 'white', width: '100%', height: 70, borderBottomColor: 'black', borderBottomWidth: 0.5, alignItems: 'center', flexDirection: 'row' }}>
+          <Image style={{ width: 54, height: 54, borderRadius: 200, marginHorizontal: 10 }} source={{ uri: "https://akupintar.id/documents/20143/0/logo+Prasmul.png/c2ad45d2-db37-e3fd-52f5-ea86274d70b2?version=1.0&t=1605681243763&imageThumbnail=1" }} />
+          <Text style={{fontSize: 17, fontWeight: 'bold'}}>Prasetiya Mulya</Text>
+        </View>
         <GiftedChat
           messages={this.state.messages}
           onSend={messages => this.onSend(messages)}
@@ -233,6 +237,7 @@ export default class ChatScreen_test extends React.Component {
           scrollToBottom
           scrollToBottomComponent={this.scrollToBottomComponent}
           renderTime={this.renderTime}
+          textInputStyle={{color: 'black'}}
           user={{
             _id: 1,
           }}

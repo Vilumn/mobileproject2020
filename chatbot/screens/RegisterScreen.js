@@ -89,12 +89,14 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         borderBottomWidth: 1,
         height: 40,
+        color: 'black',
       },
       input2: {
         marginTop: 10,
         borderWidth: 0,
         borderBottomWidth: 1,
         height: 40,
+        color: 'black',
       }
 })
 
