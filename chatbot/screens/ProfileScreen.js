@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, FlatList, ScrollView } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import CheckBox from '@react-native-community/checkbox';
+import firebase from '@react-native-firebase/app';
 
 
 function logout(){
@@ -27,6 +28,10 @@ const ProfileScreen = ({ navigation }) => {
             .catch((error) => console.error(error))
             .finally(() => setLoading(false));
     }, []);
+
+
+    const user = firebase.auth().currentUser;
+    console.log(user)
 
     return (
         <ScrollView>

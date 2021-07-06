@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity, Dimensions, SafeAreaView, ScrollView } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import Icon2 from 'react-native-vector-icons/Ionicons';
+
+const win = Dimensions.get('window');
+const ratio = win.width / 2419;
+const ratio2 = win.width / 677;
+const logo_size = 4.5;
 
 class LoginScreen extends React.Component{
     constructor(props){
@@ -35,103 +40,104 @@ class LoginScreen extends React.Component{
     }
 
     render(){
-        return(
-            <View style={styles.container}>
-                <Image
-                    source={require('../assets/line-logo-text.png')}
-                    style={styles.logo}
-                />
-                <TextInput 
-                    placeholder={'Email Address'}
-                    style={styles.input}
-                    onChangeText={email_data => this.setState({email_data})}
-                />
-                <TextInput 
-                    secureTextEntry={true}
-                    placeholder={'Password'}
-                    style={styles.input2}
-                    onChangeText={password_data => this.setState({password_data})}
-                />
-                <TouchableOpacity style={styles.buttonmargin} onPress={this.signinUser}>
-                    <View style={styles.button}>
-                        <Text style={styles.buttontext}>Log In</Text>
-                    </View>
-                </TouchableOpacity>
-                <Text style={styles.text4} onPress={() => this.props.navigation.navigate('Register')}>Don't have an account ? Create here</Text>
+      return (
+        <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
+          <ScrollView style={styles.container}>
+            <Image
+              source={require('../assets/prasmultouch-logo.png')}
+              style={styles.logo}
+            />
+            <Text style={styles.text}>Proceed with your{"\n"}<Text style={{fontFamily: 'Roboto-Bold'}}>Log In</Text></Text>
+            <Text style={styles.textdesc}>Email</Text>
+            <TextInput
+              style={styles.input}
+              onChangeText={email_data => this.setState({ email_data })}
+            />
+            <Text style={styles.textdesc}>Password</Text>
+            <TextInput
+              secureTextEntry={true}
+              style={styles.input2}
+              onChangeText={password_data => this.setState({ password_data })}
+            />
+            
+            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 30}}>
+              <TouchableOpacity onPress={this.signinUser}>
+                <View style={styles.button}>
+                  <Text style={styles.buttontext}>Log In</Text>
+                </View>
+              </TouchableOpacity>
+              <Text style={styles.text3} onPress={() => this.props.navigation.navigate('Register')}><Text style={{color: 'black'}}>Don't have an account ?</Text><Text style={{color: '#0A7FB0'}}>{"\n"}Click here to register</Text></Text>
             </View>
-        );
+            
+          </ScrollView>
+        </SafeAreaView>
+      );
     }
 }
 
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: '#ffffff',
-        flex: 1,
-        alignItems: 'center',
-        paddingTop: 100,
-      },
-      logo: {
-        width: 110,
-        height: 110 * 0.35,
-      },
-      text: {
-        fontFamily: 'Arial',
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginTop: 10,
-        color: 'black',
-      },
-      text2: {
-        marginTop: 5,
-        fontFamily: 'Arial',
-        fontSize: 12,
-        color: '#8d8d8d',
-      },
-      text3: {
-        fontSize: 14,
-        color: '#006bff',
-        marginTop: 20,
-      },
-      text4: {
-        fontSize: 14,
-        marginTop: 150,
-        color: '#006bff',
-      },
-      input: {
-        fontFamily: 'Arial',
-        fontWeight: 'bold',
-        marginTop: 50,
-        borderWidth: 0,
-        borderBottomWidth: 1,
-        height: 40,
-        width: 310,
-        color: '#c2c4c6',
-        borderColor: '#c2c4c6',
-      },
-      input2: {
-        fontFamily: 'Arial',
-        fontWeight: 'bold',
-        marginTop: 30,
-        borderWidth: 0,
-        borderBottomWidth: 1,
-        height: 40,
-        width: 310,
-        color: '#c2c4c6',
-        borderColor: '#c2c4c6',
-      },
-      button: {
-        borderRadius: 8,
-        marginTop: 30,
-        paddingVertical: 12,
-        paddingHorizontal: 132,
-        backgroundColor: '#c2c4c6',
-      },
-      buttontext: {
-          fontSize: 17,
-          color: 'white',
-          fontFamily: 'Arial',
-          fontWeight: 'bold',
-      }
+  container: {
+      backgroundColor: 'white',
+      flex: 1,
+      marginTop: 80,
+      paddingTop: 0,
+      padding: 40,
+    },
+    text: {
+      fontFamily: 'Roboto-Regular',
+      fontSize: 30,
+      marginTop: 10,
+      color: 'black',
+      marginBottom: 40,
+    },
+    text2: {
+      marginTop: 5,
+      fontFamily: 'Roboto-Bold',
+      fontSize: 24,
+      color: 'black',
+    },
+    text3: {
+      marginTop: 7,
+      color: '#006bff',
+      textAlign: 'center',
+    },
+    input: {
+      fontFamily: 'Roboto-Regular',
+      marginBottom: 20,
+      borderWidth: 0,
+      borderBottomWidth: 1,
+      height: 40,
+      color: 'black',
+    },
+    input2: {
+      fontFamily: 'Roboto-Regular',
+      borderWidth: 0,
+      borderBottomWidth: 1,
+      height: 40,
+      color: 'black',
+    },
+    logo :{
+      width: win.width / logo_size,
+      height: 2129 * ratio / logo_size,
+      marginBottom: 20,
+    },
+    textdesc:{
+      fontFamily: 'Roboto-Regular',
+      fontSize: 16,
+    },
+    button: {
+      borderRadius: 30,
+      marginTop: 30,
+      paddingVertical: 8,
+      paddingHorizontal: 70,
+      backgroundColor: '#002C70',
+    },
+    buttontext: {
+        fontSize: 17,
+        textAlign: 'center',
+        color: 'white',
+        fontFamily: 'Roboto-Regular',
+    }
 })

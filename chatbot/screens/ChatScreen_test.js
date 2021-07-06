@@ -4,6 +4,9 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons'
 import { View, Text, FlatList, ActivityIndicator, Image } from 'react-native'
 import { Dialogflow_V2 } from 'react-native-dialogflow'
 import { dialogflowConfig } from './env'
+import auth from '@react-native-firebase/auth';
+import firebase from '@react-native-firebase/app';
+
 
 const BOT = {
   _id: 2,
@@ -24,6 +27,8 @@ export default class ChatScreen_test extends React.Component {
     }
   }
   
+  
+
   componentDidMount(){
     fetch('https://kuliahstem.prasetiyamulya.ac.id/web-api/newkuliah/')
     
@@ -36,12 +41,30 @@ export default class ChatScreen_test extends React.Component {
       this.setState({ isLoading: false });
     });
     
+    const userasdfasdf = firebase.auth().currentUser;
+    console.log(userasdfasdf)
+
     Dialogflow_V2.setConfiguration(
       dialogflowConfig.client_email,
       dialogflowConfig.private_key,
       Dialogflow_V2.LANG_ENGLISH_US,
       dialogflowConfig.project_id,
     );
+
+    const user = firebase.auth().currentUser;
+    if (user !== null) {
+      // The user object has basic properties such as display name, email, etc.
+      const displayName = user.displayName;
+      const email = user.email;
+      const photoURL = user.photoURL;
+      const emailVerified = user.emailVerified;
+      console.log(displayName)
+
+      // The user's ID, unique to the Firebase project. Do NOT use
+      // this value to authenticate with your backend server, if
+      // you have one. Use User.getToken() instead.
+      const uid = user.uid;
+    }
   }
 
   handleGoogleResponse(result){
