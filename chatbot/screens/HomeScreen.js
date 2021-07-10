@@ -94,9 +94,7 @@ export default class HomeScreen extends React.Component {
                         <Text style={styles.header_title}>PRASMUL TOUCH</Text>
                     </View>
 
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Email')}>
-                        <Icon name="mail" size={30} color="white" style={{marginRight: 5}} />
-                    </TouchableOpacity>
+                    <Icon name="mail" size={30} color="white" style={{marginRight: 5}}/>
                 </View>
                 <View style={styles.body}>
                     <Text style={{fontSize: 15, color: "grey", fontFamily: "Roboto-Regular"}}>TODAY'S TIMELINE</Text>
@@ -126,24 +124,20 @@ export default class HomeScreen extends React.Component {
                         />
                         </TouchableOpacity>
                         
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('DigitalLibrary')}>
                         <Image
                             source={require('../assets/card2.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
-                        </TouchableOpacity>
                     </View>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
                         <Image
                             source={require('../assets/card3.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Event')}>
                         <Image
                             source={require('../assets/card4.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
-                        </TouchableOpacity>
                     </View>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15}}>
                         <Text style={{fontFamily: "Roboto-Bold", fontSize: 15}}>Class Recordings</Text>

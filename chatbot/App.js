@@ -16,9 +16,6 @@ import HomeScreen from './screens/HomeScreen'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo'
 import AttendanceReport from './screens/AttendanceReport';
-import DigitalLibrary from './screens/DigitalLibrary';
-import Email from './screens/Email';
-import Event from './screens/Event';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,9 +74,6 @@ function App() {
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen name="AttendanceReport" component={AttendanceReport} />
-            <Stack.Screen name="DigitalLibrary" component={DigitalLibrary} />
-            <Stack.Screen name="Email" component={Email} />
-            <Stack.Screen name="Event" component={Event} />
           </Stack.Navigator>
       </>
     ) : (
