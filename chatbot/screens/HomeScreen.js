@@ -124,10 +124,12 @@ export default class HomeScreen extends React.Component {
                         />
                         </TouchableOpacity>
                         
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('DigitalLibrary')}>
                         <Image
                             source={require('../assets/card2.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
+                        </TouchableOpacity>
                     </View>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
                         <Image
