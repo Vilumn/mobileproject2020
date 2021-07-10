@@ -64,7 +64,7 @@ export default class ChatScreen_test extends React.Component {
       // this value to authenticate with your backend server, if
       // you have one. Use User.getToken() instead.
       const uid = user.uid;
-    }
+    } 
   }
 
   handleGoogleResponse(result){

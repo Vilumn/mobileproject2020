@@ -15,9 +15,39 @@ import HomeScreen from './screens/HomeScreen'
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo'
+import AttendanceReport from './screens/AttendanceReport';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+function HomeTabs() {
+  return (
+    <Tab.Navigator screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+        let iconEntypo;
+
+        if (route.name === 'Chat') {
+          iconName = focused
+            ? 'chatbubble-ellipses'
+            : 'chatbubble-ellipses-outline';
+            return <Ionicons name={iconName} size={size} color={color} />;
+        } else if (route.name === 'Profile') {
+          iconName = focused ? 'dots-three-horizontal' : 'dots-three-horizontal';
+          return <Entypo name={iconName} size={size} color={color} />;
+        }
+      },
+    })}
+    tabBarOptions={{
+      activeTintColor: '#00b900',
+      inactiveTintColor: 'gray',
+    }}>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Chat" component={ChatScreen_test} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
 
 function App() {
   const [initializing, setInitializing] = useState(true);
@@ -41,30 +71,10 @@ function App() {
     <NavigationContainer>
     { user != null ? (
       <>
-        <Tab.Navigator screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-            let iconEntypo;
-
-            if (route.name === 'Chat') {
-              iconName = focused
-                ? 'chatbubble-ellipses'
-                : 'chatbubble-ellipses-outline';
-                return <Ionicons name={iconName} size={size} color={color} />;
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'dots-three-horizontal' : 'dots-three-horizontal';
-              return <Entypo name={iconName} size={size} color={color} />;
-            }
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: '#00b900',
-          inactiveTintColor: 'gray',
-        }}>
-          <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Chat" component={ChatScreen_test} />
-          <Tab.Screen name="Profile" component={ProfileScreen} />
-        </Tab.Navigator>
+          <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name="Home" component={HomeTabs} />
+            <Stack.Screen name="AttendanceReport" component={AttendanceReport} />
+          </Stack.Navigator>
       </>
     ) : (
       <>

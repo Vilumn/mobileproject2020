@@ -31,7 +31,6 @@ const ProfileScreen = ({ navigation }) => {
 
 
     const user = firebase.auth().currentUser;
-    console.log(user)
 
     return (
         <ScrollView>
