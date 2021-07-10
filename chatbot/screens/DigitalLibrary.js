@@ -37,6 +37,7 @@ export default class DigitalLibrary extends React.Component {
                     </View>
                     <Icon name="mail" size={30} color="white" style={{ marginRight: 5 }} />
                 </View>
+
                 <View style={{ flexDirection: 'row' }}>
                     <Icon name="book" size={50} color="5F5C5C" style={{ margin: 15 }} />
                     <View>

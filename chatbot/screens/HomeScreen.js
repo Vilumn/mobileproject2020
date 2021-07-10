@@ -94,7 +94,9 @@ export default class HomeScreen extends React.Component {
                         <Text style={styles.header_title}>PRASMUL TOUCH</Text>
                     </View>
 
-                    <Icon name="mail" size={30} color="white" style={{marginRight: 5}}/>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Email')}>
+                        <Icon name="mail" size={30} color="white" style={{marginRight: 5}} />
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.body}>
                     <Text style={{fontSize: 15, color: "grey", fontFamily: "Roboto-Regular"}}>TODAY'S TIMELINE</Text>
