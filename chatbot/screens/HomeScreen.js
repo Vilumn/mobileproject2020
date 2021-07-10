@@ -138,10 +138,12 @@ export default class HomeScreen extends React.Component {
                             source={require('../assets/card3.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Event')}>
                         <Image
                             source={require('../assets/card4.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
+                        </TouchableOpacity>
                     </View>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15}}>
                         <Text style={{fontFamily: "Roboto-Bold", fontSize: 15}}>Class Recordings</Text>

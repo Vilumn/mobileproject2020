@@ -29,8 +29,10 @@ export default class Email extends React.Component {
                 <ListItem>
                     <Icon name="mail" size={35} />
                     <ListItem.Content>
-                        <ListItem.Title style={{ fontWeight: "bold", fontSize: 18 }}>
-                            SBE Katbang
+                        <ListItem.Title style={{ flexDirection: "row" }}>
+                            <Text style={{fontWeight: "bold", fontSize: 18}}>
+                                SBE Katbang
+                            </Text>
                         </ListItem.Title>
                         <ListItem.Subtitle style={{ fontWeight: "700", fontSize: 15, marginBottom: 10 }}>
                             [KOMPETISI NASIONAL] LOMBA IDE BISNIS

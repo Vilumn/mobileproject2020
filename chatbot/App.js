@@ -18,6 +18,7 @@ import Entypo from 'react-native-vector-icons/Entypo'
 import AttendanceReport from './screens/AttendanceReport';
 import DigitalLibrary from './screens/DigitalLibrary';
 import Email from './screens/Email';
+import Event from './screens/Event';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,7 +78,8 @@ function App() {
             <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen name="AttendanceReport" component={AttendanceReport} />
             <Stack.Screen name="DigitalLibrary" component={DigitalLibrary} />
-            <Stack.Screen name="Email"  component={Email} />
+            <Stack.Screen name="Email" component={Email} />
+            <Stack.Screen name="Event" component={Event} />
           </Stack.Navigator>
       </>
     ) : (
