@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, Dimensions, SafeAreaView, TouchableOpaci
 import Icon from 'react-native-vector-icons/AntDesign';
 import {Picker} from '@react-native-picker/picker';
 import Header from './header'
+import CourseListAttendance from './CourseListAttendance';
 
 
 const win = Dimensions.get('window');
@@ -46,7 +47,7 @@ export default class AttendanceReport extends React.Component {
                             borderRadius: 20,
                             width: 110,
                         }}
-                        onPress={this.onPress}
+                        onPress={() => this.props.navigation.navigate('CourseListAttendance')}
                     >
                         <Text style={{color: 'white', fontFamily: 'Roboto-Bold', fontSize: 16}}>Search</Text>
                     </TouchableOpacity>

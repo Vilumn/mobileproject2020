@@ -22,6 +22,9 @@ import DigitalLibrary from './screens/DigitalLibrary';
 import Email from './screens/Email';
 import Event from './screens/Event';
 
+// Ini List Matakuliah Setelah Klik "Search" di Screen AttendanceReport
+import CourseListAttendance from './screens/CourseListAttendance';
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -79,6 +82,7 @@ function App() {
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen name="AttendanceReport" component={AttendanceReport} />
+            <Stack.Screen name="CourseListAttendance" component={CourseListAttendance} />
             <Stack.Screen name="CourseOverview" component={CourseOverview} />
             <Stack.Screen name="DigitalLibrary" component={DigitalLibrary} />
             <Stack.Screen name="Email" component={Email} />
