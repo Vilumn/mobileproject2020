@@ -24,12 +24,6 @@ export default class AttendanceReport extends React.Component {
                 <Header
                     navigationpage={() => this.props.navigation.navigate('Home')}
                 />
-                {/* <View style={styles.header}>
-                    <View style={{ flexDirection: 'row' }}>
-                        <Icon name="arrowleft" size={30} color="white" style={{ marginRight: 5 }} onPress={() => this.props.navigation.navigate('Home')} />
-                    </View>
-                    <Icon name="mail" size={30} color="white" style={{ marginRight: 5 }} />
-                </View> */}
                 <View style={{padding: 20}}>
                     <Text style={{fontFamily: 'Roboto-Bold', fontSize: 24}}>Attendance Report</Text>
                     <Text style={{fontFamily: 'Roboto-Bold', fontSize: 18, marginBottom: 70}}>Even, 2020</Text>

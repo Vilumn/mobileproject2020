@@ -124,16 +124,21 @@ export default class HomeScreen extends React.Component {
                         />
                         </TouchableOpacity>
                         
+                        
                         <Image
                             source={require('../assets/card2.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
+                        
                     </View>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('CourseOverview')}>
                         <Image
                             source={require('../assets/card3.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
+                        </TouchableOpacity>
+
                         <Image
                             source={require('../assets/card4.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
