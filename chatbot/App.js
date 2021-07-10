@@ -16,7 +16,12 @@ import HomeScreen from './screens/HomeScreen'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo'
 import AttendanceReport from './screens/AttendanceReport';
+<<<<<<< HEAD
 import CourseOverview from './screens/CourseOverview';
+=======
+import DigitalLibrary from './screens/DigitalLibrary';
+import Email from './screens/Email';
+>>>>>>> 4843fb4d939b62bd1ea5e5884a150f6fcc6cf7de
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -75,7 +80,12 @@ function App() {
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen name="AttendanceReport" component={AttendanceReport} />
+<<<<<<< HEAD
             <Stack.Screen name="CourseOverview" component={CourseOverview} />
+=======
+            <Stack.Screen name="DigitalLibrary" component={DigitalLibrary} />
+            <Stack.Screen name="Email"  component={Email} />
+>>>>>>> 4843fb4d939b62bd1ea5e5884a150f6fcc6cf7de
           </Stack.Navigator>
       </>
     ) : (

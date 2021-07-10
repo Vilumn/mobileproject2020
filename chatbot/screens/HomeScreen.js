@@ -94,7 +94,9 @@ export default class HomeScreen extends React.Component {
                         <Text style={styles.header_title}>PRASMUL TOUCH</Text>
                     </View>
 
-                    <Icon name="mail" size={30} color="white" style={{marginRight: 5}}/>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Email')}>
+                        <Icon name="mail" size={30} color="white" style={{marginRight: 5}} />
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.body}>
                     <Text style={{fontSize: 15, color: "grey", fontFamily: "Roboto-Regular"}}>TODAY'S TIMELINE</Text>
@@ -124,12 +126,20 @@ export default class HomeScreen extends React.Component {
                         />
                         </TouchableOpacity>
                         
+<<<<<<< HEAD
                         
+=======
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('DigitalLibrary')}>
+>>>>>>> 4843fb4d939b62bd1ea5e5884a150f6fcc6cf7de
                         <Image
                             source={require('../assets/card2.png')}
                             style={{width: win.width*4.5/10, height: win.width*4.5/10*3/4}}
                         />
+<<<<<<< HEAD
                         
+=======
+                        </TouchableOpacity>
+>>>>>>> 4843fb4d939b62bd1ea5e5884a150f6fcc6cf7de
                     </View>
                     <View style={{flexDirection: 'row', justifyContent: 'space-between', marginBottom: 10}}>
                         <TouchableOpacity onPress={() => this.props.navigation.navigate('CourseOverview')}>
