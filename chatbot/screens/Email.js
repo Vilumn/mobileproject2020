@@ -3,6 +3,7 @@ import { View, Text, Image, StyleSheet, Dimensions, SafeAreaView } from 'react-n
 import Icon from 'react-native-vector-icons/AntDesign';
 import { SearchBar, Avatar, ListItem } from 'react-native-elements';
 import { ScrollView } from 'react-native';
+import OptionsMenu from "react-native-options-menu";
 
 const win = Dimensions.get('window');
 const logo_size = 12;
@@ -24,13 +25,24 @@ export default class Email extends React.Component {
                     <View style={{ flexDirection: 'row' }}>
                         <Icon name="arrowleft" size={30} color="white" style={{ marginRight: 5 }} onPress={() => this.props.navigation.navigate('Home')} />
                     </View>
-                    <Icon name="mail" size={30} color="white" style={{ marginRight: 5 }} />
+                    {/* <Icon name="mail" size={30} color="white" style={{ marginRight: 5 }} /> */}
+                    <OptionsMenu
+                        customButton={(
+                            <View>
+                                <Icon
+                                    name="filter"
+                                    size={26}
+                                    color="white" />
+                            </View>
+                        )}
+                        destructiveIndex={1}
+                        options={["Unread", "Flagged"]} />
                 </View>
                 <ListItem>
                     <Icon name="mail" size={35} />
                     <ListItem.Content>
                         <ListItem.Title style={{ flexDirection: "row" }}>
-                            <Text style={{fontWeight: "bold", fontSize: 18}}>
+                            <Text style={{ fontWeight: "bold", fontSize: 18 }}>
                                 SBE Katbang
                             </Text>
                         </ListItem.Title>
