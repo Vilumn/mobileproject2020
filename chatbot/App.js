@@ -21,38 +21,53 @@ import CourseOverview from './screens/CourseOverview';
 import DigitalLibrary from './screens/DigitalLibrary';
 import Email from './screens/Email';
 import Event from './screens/Event';
-
+import GradeRecord from './screens/GradeRecord';
 // Ini List Matakuliah Setelah Klik "Search" di Screen AttendanceReport
 import CourseListAttendance from './screens/CourseListAttendance';
+
+import HomeIcon from 'react-native-vector-icons/Ionicons'
+import CalIcon from 'react-native-vector-icons/Feather'
+import ClipIcon from 'react-native-vector-icons/Foundation'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function HomeTabs() {
   return (
-    <Tab.Navigator screenOptions={({ route }) => ({
-      tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-        let iconEntypo;
-
-        if (route.name === 'Chat') {
-          iconName = focused
-            ? 'chatbubble-ellipses'
-            : 'chatbubble-ellipses-outline';
-            return <Ionicons name={iconName} size={size} color={color} />;
-        } else if (route.name === 'Profile') {
-          iconName = focused ? 'dots-three-horizontal' : 'dots-three-horizontal';
-          return <Entypo name={iconName} size={size} color={color} />;
-        }
-      },
-    })}
+    <Tab.Navigator
     tabBarOptions={{
       activeTintColor: '#00b900',
       inactiveTintColor: 'gray',
+      showLabel: false,
     }}>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Chat" component={ChatScreen_test} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{
+        tabBarIcon: ({ focused }) => (
+          <View style={{backgroundColor: 'white', flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', borderBottomColor: focused ? '#002C70' : 'white', borderBottomWidth: 5, borderTopWidth: 5, borderTopColor: 'white'}}>
+            <HomeIcon name='home-outline' size={25} style={{color: focused ? '#002C70' : "#BBBBBB" }}/>
+          </View>
+        ),
+      }} />
+      <Tab.Screen name="Chat" component={ChatScreen_test} options={{
+        tabBarIcon: ({ focused }) => (
+          <View style={{backgroundColor: 'white', flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', borderBottomColor: focused ? '#002C70' : 'white', borderBottomWidth: 5, borderTopWidth: 5, borderTopColor: 'white'}}>
+            <CalIcon name='calendar' size={25} style={{color: focused ? '#002C70' : "#BBBBBB" }}/>
+          </View>
+        ),
+      }}/>
+      <Tab.Screen name="GradeRecord" component={GradeRecord} options={{
+        tabBarIcon: ({ focused }) => (
+          <View style={{backgroundColor: 'white', flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', borderBottomColor: focused ? '#002C70' : 'white', borderBottomWidth: 5, borderTopWidth: 5, borderTopColor: 'white'}}>
+            <ClipIcon name='clipboard-notes' size={25} style={{color: focused ? '#002C70' : "#BBBBBB" }}/>
+          </View>
+        ),
+      }}/>
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{
+        tabBarIcon: ({ focused }) => (
+          <View style={{backgroundColor: 'white', flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', borderBottomColor: focused ? '#002C70' : 'white', borderBottomWidth: 5, borderTopWidth: 5, borderTopColor: 'white'}}>
+            <HomeIcon name='md-person-outline' size={25} style={{color: focused ? '#002C70' : "#BBBBBB" }}/>
+          </View>
+        ),
+      }}/>
     </Tab.Navigator>
   );
 }
