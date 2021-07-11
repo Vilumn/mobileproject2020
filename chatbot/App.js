@@ -1,7 +1,7 @@
 import React, {Component, useState, useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import { View, Text, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import auth from '@react-native-firebase/auth';
@@ -24,6 +24,7 @@ import Event from './screens/Event';
 import GradeRecord from './screens/GradeRecord';
 // Ini List Matakuliah Setelah Klik "Search" di Screen AttendanceReport
 import CourseListAttendance from './screens/CourseListAttendance';
+import AttendanceDetails from './screens/AttendanceDetails';
 
 import HomeIcon from 'react-native-vector-icons/Ionicons'
 import CalIcon from 'react-native-vector-icons/Feather'
@@ -98,6 +99,7 @@ function App() {
             <Stack.Screen name="Home" component={HomeTabs} />
             <Stack.Screen name="AttendanceReport" component={AttendanceReport} />
             <Stack.Screen name="CourseListAttendance" component={CourseListAttendance} />
+            <Stack.Screen name="AttendanceDetails" component={AttendanceDetails} />
             <Stack.Screen name="CourseOverview" component={CourseOverview} />
             <Stack.Screen name="DigitalLibrary" component={DigitalLibrary} />
             <Stack.Screen name="Email" component={Email} />

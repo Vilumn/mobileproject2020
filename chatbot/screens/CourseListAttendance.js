@@ -1,6 +1,5 @@
 import React, { } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, SafeAreaView, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/AntDesign';
 import { ListItem } from 'react-native-elements';
 import Header from './header'
 
@@ -55,7 +54,7 @@ export default class CourseListAttendance extends React.Component {
 
                 {
                     mataKuliah.map((course, index) => (
-                        <View key={index}>
+                        <TouchableOpacity key={index} onPress={() => this.props.navigation.navigate('AttendanceDetails')}>
                             <ListItem>
                                 <ListItem.Content>
                                     <ListItem.Title style={{ flexDirection: "row" }}>
@@ -77,7 +76,7 @@ export default class CourseListAttendance extends React.Component {
                                     marginTop: 10
                                 }}
                             />
-                        </View>
+                        </TouchableOpacity>
                     ))
                 }
 
