@@ -27,6 +27,8 @@ import CourseListAttendance from './screens/CourseListAttendance';
 import Session from './screens/Session';
 import AttendanceDetails from './screens/AttendanceDetails';
 
+import Calender from './screens/Calender';
+
 import HomeIcon from 'react-native-vector-icons/Ionicons'
 import CalIcon from 'react-native-vector-icons/Feather'
 import ClipIcon from 'react-native-vector-icons/Foundation'
@@ -49,7 +51,7 @@ function HomeTabs() {
           </View>
         ),
       }} />
-      <Tab.Screen name="Chat" component={ChatScreen_test} options={{
+      <Tab.Screen name="Calender" component={Calender} options={{
         tabBarIcon: ({ focused }) => (
           <View style={{backgroundColor: 'white', flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', borderBottomColor: focused ? '#002C70' : 'white', borderBottomWidth: 5, borderTopWidth: 5, borderTopColor: 'white'}}>
             <CalIcon name='calendar' size={25} style={{color: focused ? '#002C70' : "#BBBBBB" }}/>
