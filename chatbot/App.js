@@ -24,6 +24,7 @@ import Event from './screens/Event';
 import GradeRecord from './screens/GradeRecord';
 // Ini List Matakuliah Setelah Klik "Search" di Screen AttendanceReport
 import CourseListAttendance from './screens/CourseListAttendance';
+import Session from './screens/Session';
 
 import HomeIcon from 'react-native-vector-icons/Ionicons'
 import CalIcon from 'react-native-vector-icons/Feather'
@@ -102,6 +103,7 @@ function App() {
             <Stack.Screen name="DigitalLibrary" component={DigitalLibrary} />
             <Stack.Screen name="Email" component={Email} />
             <Stack.Screen name="Event" component={Event} />
+            <Stack.Screen name="Session" component={Session} />
           </Stack.Navigator>
       </>
     ) : (
