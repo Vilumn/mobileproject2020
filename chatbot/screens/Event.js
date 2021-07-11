@@ -99,27 +99,32 @@ export default class Event extends React.Component {
                 <View>
                     <Text style={{ padding: 12, fontFamily: 'Roboto-Bold', fontSize: 17, marginBottom: 10 }}>Recently Accessed Course</Text>
                 </View>
-                <ScrollView pagingEnabled horizontal>
-                    {
-                        semuaAcara.map((acara, index) => (
-                            <View key={index} style={{ marginRight: 15, borderColor: 'grey', borderWidth: 1, height: "25%", width: win.width * 7.05 / 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, elevation: 4, backgroundColor: 'white'}}>
-                                <View>
-                                    <Image
-                                        source={require('../assets/accessed-course.png')}
-                                        style={{ width: win.width * 7 / 10, height: win.width * 300 / 1231 * 7 / 10 }}
-                                    />
-                                    <View style={{ padding: 10 }}>
-                                        <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 12 }}>{acara.tipe}</Text>
-                                        <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 11 }}>{acara.nama}</Text>
+
+                <View>
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                        <View style={{ flexDirection: 'row', marginBottom: 20, marginLeft: 15}}>
+                            {
+                                semuaAcara.map((acara, index) => (
+                                    <View key={index} style={{ marginRight: 15, borderColor: 'grey', borderWidth: 1, width: win.width * 7.05 / 10, borderBottomLeftRadius: 15, borderBottomRightRadius: 15, elevation: 4, backgroundColor: 'white' }}>
+                                        <View>
+                                            <Image
+                                                source={require('../assets/accessed-course.png')}
+                                                style={{ width: win.width * 7 / 10, height: win.width * 300 / 1231 * 7 / 10 }}
+                                            />
+                                            <View style={{ padding: 10 }}>
+                                                <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 12 }}>{acara.tipe}</Text>
+                                                <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 11 }}>{acara.nama}</Text>
+                                            </View>
+                                        </View>
                                     </View>
-                                </View>
-                            </View>
-                        ))
-                    }
-                </ScrollView>
+                                ))
+                            }
+                        </View>
+                    </ScrollView>
+                </View>
 
                 {/* Ini Buat Garis */}
-                <View style={{ width: win.width, height: 6, backgroundColor: '#C7C7C7', marginTop: -350 }} />
+                <View style={{ width: win.width, height: 6, backgroundColor: '#C7C7C7'}} />
 
                 {/* Grid Organisasi */}
                 <View style={{ padding: 12, flex: 1, paddingBottom: 0 }}>
