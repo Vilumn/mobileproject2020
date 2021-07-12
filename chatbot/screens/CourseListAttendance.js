@@ -54,7 +54,7 @@ export default class CourseListAttendance extends React.Component {
 
                 {
                     mataKuliah.map((course, index) => (
-                        <TouchableOpacity key={index} onPress={() => this.props.navigation.navigate('AttendanceDetails')}>
+                        <TouchableOpacity key={index} onPress={() => this.props.navigation.navigate('AttendanceDetails', {matkul: course.nama, sks: course.kredit})}>
                             <ListItem>
                                 <ListItem.Content>
                                     <ListItem.Title style={{ flexDirection: "row" }}>

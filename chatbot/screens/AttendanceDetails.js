@@ -27,8 +27,8 @@ export default class AttendanceDetails extends React.Component {
                 />
                 <View style={{ padding: 20 }}>
                     <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 24 }}>Even Session, 2021</Text>
-                    <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 18 }}>Intermediate Programming</Text>
-                    <Text style={{ fontFamily: 'Roboto', fontSize: 15, marginBottom: 70 }}>Credits: 4</Text>
+                    <Text style={{ fontFamily: 'Roboto-Bold', fontSize: 18 }}>{this.props.route.params.matkul}</Text>
+                    <Text style={{ fontFamily: 'Roboto', fontSize: 15, marginBottom: 70 }}>Credits: {this.props.route.params.sks}</Text>
                 </View>
                 <View style={{ alignSelf: "center", marginTop: -60, marginBottom: 20 }}>
                     <Pie
