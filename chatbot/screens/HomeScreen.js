@@ -43,7 +43,6 @@ export default class HomeScreen extends React.Component {
 
     componentDidMount() {
         this.getdate();
-        this.menyoba();
 
         fetch('https://kuliahstem.prasetiyamulya.ac.id/web-api/newkuliah/')
 
@@ -71,10 +70,6 @@ export default class HomeScreen extends React.Component {
         this.setState({ current_date: dayName + ", " + monthName + " " + date + " " + year })
     }
 
-
-    menyoba(){
-        
-    }
 
     filter(){
         var day = new Date().getDay()

@@ -60,10 +60,10 @@ export default class Session extends React.Component {
         return (
             <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
                 <Header
-                    navigationpage={() => this.props.navigation.navigate('Home')}
+                    navigationpage={() => this.props.navigation.navigate('GradeRecord')}
                 />
                 
-                <Text style={{fontFamily: 'Roboto-Bold', fontSize: 29, marginVertical: 25, marginLeft: 10}}>ODD SESSION, 2020</Text>
+                <Text style={{fontFamily: 'Roboto-Bold', fontSize: 29, marginVertical: 25, marginLeft: 10}}>{this.props.route.params.value1} SESSION, {this.props.route.params.value2}</Text>
                 
                 {this.state.sessions.map((item, index) => (
                 <View key={index} style={{padding: 18, paddingTop: 0}}>

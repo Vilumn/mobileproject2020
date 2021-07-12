@@ -43,8 +43,8 @@ export default class GradeRecords extends React.Component {
                                     this.setState({ selectedLanguage: itemValue })
                                 }>
                                 <Picker.Item value='' label='SESSION' style={{color: 'grey'}}/>
-                                <Picker.Item label="Even" value="2020-2021, Even Session" style={{color: 'black'}}/>
-                                <Picker.Item label="Odd" value="2020-2021, Odd Session" />
+                                <Picker.Item label="Even" value="Even" style={{color: 'black'}}/>
+                                <Picker.Item label="Odd" value="Odd" />
                             </Picker>
                         </View>
                         <View style={{ backgroundColor: 'white', borderRadius: 20, marginHorizontal: 20, shadowColor: 'black', shadowOffset: { width: 0, height: 1 }, shadowOpacity: 1, shadowRadius: 2, elevation: 5, marginBottom: 20 }}>
@@ -54,8 +54,8 @@ export default class GradeRecords extends React.Component {
                                     this.setState({ selectedLanguage2: itemValue })
                                 }>
                                 <Picker.Item value='' label='ACADEMIC YEAR' style={{color: 'grey'}}/>
-                                <Picker.Item label="2020" value="2020-2021, Even Session" style={{color: 'black'}}/>
-                                <Picker.Item label="2021" value="2020-2021, Odd Session" />
+                                <Picker.Item label="2020" value="2020" style={{color: 'black'}}/>
+                                <Picker.Item label="2021" value="2021" />
                             </Picker>
                         </View>
                         <View style={{ alignItems: 'center' }}>
@@ -67,7 +67,7 @@ export default class GradeRecords extends React.Component {
                                     borderRadius: 20,
                                     width: 110,
                                 }}
-                                onPress={() => this.props.navigation.navigate('Session')}
+                                onPress={() => this.props.navigation.navigate('Session', {value1: this.state.selectedLanguage, value2: this.state.selectedLanguage2})}
                             >
                                 <Text style={{ color: 'white', fontFamily: 'Roboto-Bold', fontSize: 16 }}>Search</Text>
                             </TouchableOpacity>

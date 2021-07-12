@@ -116,7 +116,7 @@ export default class Grade extends React.Component {
         return (
             <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
                 <Header
-                    navigationpage={() => this.props.navigation.navigate('Home')}
+                    navigationpage={() => this.props.navigation.navigate('Session')}
                 />
                 <View style={{alignItems: 'center', marginBottom: 15}}>
                     <Text style={{fontFamily: 'Roboto-Bold', fontSize: 20, marginTop: 20}}>{this.props.route.params.title}</Text>
