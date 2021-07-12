@@ -39,7 +39,7 @@ export default class DigitalLibrary extends React.Component {
                 </View>
 
                 <View style={{ flexDirection: 'row' }}>
-                    <Icon name="book" size={50} color="5F5C5C" style={{ margin: 15 }} />
+                    <Icon name="book" size={50} color="#5F5C5C" style={{ margin: 15 }} />
                     <View>
                         <Text style={styles.h1}>Prasetiya Mulya Digital Library</Text>
                         <Text style={styles.h2}>Browse and borrow any book from this page</Text>
@@ -89,8 +89,8 @@ export default class DigitalLibrary extends React.Component {
                 <View>
                     <Text style={{ fontSize: 20, marginTop: 10, marginLeft: 20, fontWeight: "bold" }}>Borrowed books</Text>
                 </View>
-                <View style={{ marginTop: 10, caro }}>
-                    <ScrollView pagingEnabled horizontal style={{ caro }}>
+                <View style={{ marginTop: 10 }}>
+                    <ScrollView pagingEnabled horizontal>
                         {
                             book.map((books, index) => (
                                 <Image
@@ -117,14 +117,12 @@ export default class DigitalLibrary extends React.Component {
                 <View style={{ flexDirection: "row", marginTop: 10 }}>
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <Image
-                            style={caro}
                             source={require('../assets/image1.png')}
                         />
                         <Text style={{ fontSize: 15, fontWeight: 'bold' }}>Computer</Text>
                     </View>
                     <View style={{ flex: 1, justifyContent: 'center' }}>
                         <Image
-                            style={caro}
                             source={require('../assets/image3.png')}
 
                         />
@@ -150,13 +148,11 @@ export default class DigitalLibrary extends React.Component {
                 <View style={{ flexDirection: "row", marginTop: 10 }}>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         <Image
-                            style={{ caro }}
                             source={require('../assets/jurnal1.png')}
                         />
                     </View>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                         <Image
-                            style={caro}
                             source={require('../assets/jurnal2.png')}
 
                         />
