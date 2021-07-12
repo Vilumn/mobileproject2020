@@ -30,6 +30,13 @@ export default class HomeScreen extends React.Component {
                     date: 'Week 5 - 20/05/21',
                     time: '1:10:14'
                 },
+                {
+                    id: '2',
+                    title: 'Second Item',
+                    title: 'Software Design',
+                    date: 'Week 5 - 20/05/21',
+                    time: '1:10:14'
+                },
             ],
         };
     }

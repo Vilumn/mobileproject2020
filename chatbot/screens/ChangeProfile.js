@@ -35,6 +35,8 @@ export default class AttendanceReport extends React.Component {
 
         const user = firebase.auth().currentUser;
 
+        console.log(user)
+
         user.updateProfile({
             displayName: name,
         }).then(() => {
