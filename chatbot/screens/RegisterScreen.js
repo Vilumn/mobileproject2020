@@ -13,12 +13,13 @@ const logo_size = 4.5;
 class RegisterScreen extends React.Component{
   constructor(props){
     super(props);
-    this.state={email_data:'', password_data:''}
+    this.state={email_data:'', password_data:'', name_data:''}
   }
 
   createUser = () => {
     var email = this.state.email_data;
     var password = this.state.password_data;
+    var name = this.state.name_data;
     auth()
     .createUserWithEmailAndPassword(email, password)
     .then(() => {
@@ -27,7 +28,7 @@ class RegisterScreen extends React.Component{
       const user = firebase.auth().currentUser;
 
       user.updateProfile({
-        displayName: "none",
+        displayName: name,
         photoURL: "none"
       }).then(() => {
         // Update successful
@@ -57,6 +58,13 @@ class RegisterScreen extends React.Component{
             style={styles.logo}
           />
           <Text style={styles.text}>Register an account</Text>
+          <Text style={{fontFamily: 'Roboto-Regular', fontSize: 14, color: 'grey'}}>Email should be in the format of NIM and gmail</Text>
+          <Text style={{fontFamily: 'Roboto-Regular', fontSize: 14, color: 'grey', marginBottom: 20}}>Example: 23501910011@gmail.com</Text>
+          <Text style={styles.textdesc}>Name</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={name_data => this.setState({ name_data })}
+          />
           <Text style={styles.textdesc}>Email</Text>
           <TextInput
             style={styles.input}
@@ -90,7 +98,7 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
         flex: 1,
-        marginTop: 100,
+        marginTop: 45,
         paddingTop: 0,
         padding: 40,
       },
@@ -99,7 +107,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         marginTop: 10,
         color: 'black',
-        marginBottom: 40,
+        marginBottom: 0,
       },
       text2: {
         marginTop: 5,

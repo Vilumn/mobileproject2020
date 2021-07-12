@@ -11,21 +11,20 @@ function logout(){
 }
 
 const ProfileScreen = ({ navigation }) => {
-    const [isLoading, setLoading] = useState(true);
-    const [event, setEvent] = useState([]);
-
-    useEffect(() => {
-        fetch('https://kuliahstem.prasetiyamulya.ac.id/web-api/newkuliahbyfacultyname/permata')
-            .then((response) => response.json())
-            .then((json) => {
-                setEvent(json);
-            })
-            .catch((error) => console.error(error))
-            .finally(() => setLoading(false));
-    }, []);
-
-
     const user = firebase.auth().currentUser;
+    const nim = user.email.split('@')[0]
+
+    const nim_data = {
+        '231': 'Business Mathematics',
+        '232': 'Food Business Technology',
+        '233': 'Renewable Energy Engineering',
+        '234': 'Computer Systems Engineering',
+        '235': 'Software Engineering',
+        '236': 'Product Design Engineering'
+    }
+
+    const nama_prodi = nim_data[nim.substring(0, 3)]
+
 
     return (
         <ScrollView style={{flex: 1, backgroundColor: 'white'}}>
@@ -33,9 +32,9 @@ const ProfileScreen = ({ navigation }) => {
                     <View style={{ backgroundColor: 'white', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{ fontFamily: 'Roboto-Bold', color: '#002C70', fontSize: 22, marginVertical: 22 }}>Profile</Text>
                         <Image style={{ width: 120, height: 120, borderRadius: 200 }} source={{ uri: "https://images.unsplash.com/photo-1542027959157-98e6745f4ba7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" }} />
-                        <Text style={{ fontFamily: 'Roboto-Bold', color: 'black', fontSize: 28, marginTop: 20, marginBottom: 6 }}>Kenny William</Text>
-                        <Text style={{ fontFamily: 'Roboto-Regular', color: 'black', fontSize: 20, marginBottom: 25 }}>Business Management </Text>
-                        <TouchableOpacity style={{marginBottom: 20}}>
+                        <Text style={{ fontFamily: 'Roboto-Bold', color: 'black', fontSize: 28, marginTop: 20, marginBottom: 6 }}>{user.displayName}</Text>
+                        <Text style={{ fontFamily: 'Roboto-Regular', color: 'black', fontSize: 20, marginBottom: 25 }}>{nama_prodi}</Text>
+                        <TouchableOpacity style={{marginBottom: 20}} onPress={() => navigation.navigate('ChangeProfile')}>
                             <View style={{borderRadius: 100, borderColor: '#002C70', borderWidth: 2, paddingHorizontal: 30, paddingVertical: 5}}>
                                 <Text style={{fontFamily: 'Roboto-Bold', color: '#002C70', fontSize: 20}}>Change Profile</Text>
                             </View>
@@ -49,7 +48,7 @@ const ProfileScreen = ({ navigation }) => {
                             </View>
                             <View>
                                 <Text style={styles.font1}>NIM</Text>
-                                <Text style={styles.font2}>23501910011</Text>
+                                <Text style={styles.font2}>{nim}</Text>
                             </View>
                         </View>
                         
@@ -69,7 +68,7 @@ const ProfileScreen = ({ navigation }) => {
                             </View>
                             <View style={{width: '100%'}}>
                                 <Text style={styles.font1}>Email</Text>
-                                <Text style={styles.font2}>23501910011@gmail.com</Text>
+                                <Text style={styles.font2}>{user.email}</Text>
                             </View>
                         </View>
                         
@@ -79,14 +78,14 @@ const ProfileScreen = ({ navigation }) => {
                             </View>
                             <View>
                                 <Text style={styles.font1}>Phone</Text>
-                                <Text style={styles.font2}>081589238921</Text>
+                                <Text style={styles.font2}>{user.phoneNumber}</Text>
                             </View>
                         </View>
                     </View>
 
                     
                     <View style={{alignItems: 'center'}}>
-                    <TouchableOpacity onPress={() => logout()}>
+                    <TouchableOpacity>
                         <View style={{}}>
                             <Text style={{ fontFamily: 'Roboto-Regular', color: 'black', fontSize: 20, marginBottom: 14 }}>Contact us</Text>
                         </View>

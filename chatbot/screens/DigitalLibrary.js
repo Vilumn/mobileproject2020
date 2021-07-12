@@ -64,7 +64,7 @@ export default class DigitalLibrary extends React.Component {
                 <View>
                     <Text style={{ fontSize: 20, marginTop: 25, marginLeft: 20, fontWeight: "bold" }}>Popular Book</Text>
                 </View>
-                <View style={{ marginTop: 10, caro }}>
+                <View style={{ marginTop: 10 }}>
                     <ScrollView pagingEnabled horizontal style={{ caro }}>
                         {
                             book.map((books, index) => (

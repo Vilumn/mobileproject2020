@@ -1,6 +1,7 @@
 import React, { useState, setState } from 'react';
 import { TouchableOpacity, View, Text, StyleSheet, TextInput, Button, Image, Dimensions, SafeAreaView, ScrollView, FlatList, StatusBar } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
+import firebase from '@react-native-firebase/app';
 
 const win = Dimensions.get('window');
 const ratio = win.width / 2419;
@@ -11,6 +12,7 @@ export default class HomeScreen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            prodi: '',
             data: [],
             filtered_data: [],
             current_date: "",
@@ -34,6 +36,7 @@ export default class HomeScreen extends React.Component {
 
     componentDidMount() {
         this.getdate();
+        this.menyoba();
 
         fetch('https://kuliahstem.prasetiyamulya.ac.id/web-api/newkuliah/')
 
@@ -61,21 +64,40 @@ export default class HomeScreen extends React.Component {
         this.setState({ current_date: dayName + ", " + monthName + " " + date + " " + year })
     }
 
-    filter() {
+
+    menyoba(){
+        
+    }
+
+    filter(){
         var day = new Date().getDay()
         var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-
         let data1 = [];
         let data2 = [];
+        
+        const nim_data = {
+            '231': 'Business Mathematics',
+            '232': 'Food Business Technology',
+            '233': 'Renewable Energy Engineering',
+            '234': 'Computer Systems Engineering',
+            '235': 'Software Engineering',
+            '236': 'Product Design Engineering'
+        }
+
+        const user= firebase.auth().currentUser
+
+        const nim = user.email.split('@')[0]
+        const cekprodi = nim.substring(0, 3)
+
+        this.setState({ prodi: nim_data[cekprodi] })
 
         for (var i = 0; i < this.state.data.length; i++) {
-            if (this.state.data[i].program_name == 'Software Engineering' && this.state.data[i].day == days[day]) {
+            if (this.state.data[i].program_name == nim_data[cekprodi] && this.state.data[i].day == days[day]) {
                 data1.push(this.state.data[i])
             }
         }
         this.setState({ filtered_data: data1 })
-        console.log(this.state.filtered_data)
     }
 
 
@@ -99,7 +121,7 @@ export default class HomeScreen extends React.Component {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.body}>
-                    <Text style={{ fontSize: 15, color: "grey", fontFamily: "Roboto-Regular" }}>TODAY'S TIMELINE</Text>
+                    <Text style={{ fontSize: 15, color: "grey", fontFamily: "Roboto-Regular" }}>TODAY'S TIMELINE ( {this.state.prodi} )</Text>
                     <Text style={{ fontSize: 18, color: "black", fontFamily: "Roboto-Regular", marginBottom: 15 }}>{this.state.current_date}</Text>
                     <FlatList
                         horizontal

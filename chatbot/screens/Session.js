@@ -66,8 +66,8 @@ export default class Session extends React.Component {
                 <Text style={{fontFamily: 'Roboto-Bold', fontSize: 29, marginVertical: 25, marginLeft: 10}}>ODD SESSION, 2020</Text>
                 
                 {this.state.sessions.map((item, index) => (
-                    <View key={index} style={{padding: 18, paddingTop: 0}}>
-                        <TouchableOpacity>
+                <View key={index} style={{padding: 18, paddingTop: 0}}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Grade', {title: item.title, grade: item.grade})}>
                             <View>
                                 <View style={{
                                     borderLeftColor: item.color,
@@ -89,21 +89,6 @@ export default class Session extends React.Component {
                         <View style={{borderBottomColor: '#C7C7C7', borderBottomWidth: 1, width: win.width, marginHorizontal: -18, marginTop: 20}}></View>
                     </View>
                 ))}
-
-                {/* <View style={{padding: 18, paddingTop: 0}}>
-                    <View>
-                        <View style={styles.titlebox}>
-                            <Text style={styles.title}>Intermediate Programming</Text>
-                        </View>
-                        <Text style={styles.details}>Tap for more details</Text>
-                        <View style={styles.descbox}>
-                            <Text style={styles.descboxtext}>GRADE: A</Text>
-                            <Text style={styles.descboxtext}>   //   </Text>
-                            <Text style={styles.descboxtext}>CREDITS: 4</Text>
-                        </View>
-                    </View>
-                    <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, width: win.width, marginHorizontal: -18, marginTop: 20}}></View>
-                </View> */}
                 
             </ScrollView>
         )

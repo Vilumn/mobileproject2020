@@ -82,7 +82,7 @@ export default class Event extends React.Component {
                 />
 
                 <View style={{ flexDirection: 'row' }}>
-                    <Icon name="team" size={50} color="5F5C5C" style={{ margin: 15 }} />
+                    <Icon name="team" size={50} color="#5F5C5C" style={{ margin: 15 }} />
                     <View>
                         <Text style={styles.h1}>Events and Organizations</Text>
                         <Text style={styles.h2}>See what events and organizations is comming</Text>

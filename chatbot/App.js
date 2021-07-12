@@ -28,6 +28,9 @@ import Session from './screens/Session';
 import AttendanceDetails from './screens/AttendanceDetails';
 
 import Calender from './screens/Calender';
+import Grade from './screens/Grade';
+import ChangeProfile from './screens/ChangeProfile'
+
 
 import HomeIcon from 'react-native-vector-icons/Ionicons'
 import CalIcon from 'react-native-vector-icons/Feather'
@@ -108,6 +111,8 @@ function App() {
             <Stack.Screen name="Email" component={Email} />
             <Stack.Screen name="Event" component={Event} />
             <Stack.Screen name="Session" component={Session} />
+            <Stack.Screen name="Grade" component={Grade} />
+            <Stack.Screen name="ChangeProfile" component={ChangeProfile} />
           </Stack.Navigator>
       </>
     ) : (
@@ -124,4 +129,3 @@ function App() {
 }
   
 export default App;
-
